@@ -23,9 +23,10 @@ to generate QR codes.
 - Python 3.14 installed on your system.
 - Django installed. if you don't have Django installed, you can install it using pip:
 
- ''' bash
- 
+Use These Commands :
+``` 
  pip install django
  pip install qrcode
  pip install pillow
- '''
+```
+ 
