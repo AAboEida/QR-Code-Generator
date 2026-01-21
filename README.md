@@ -8,7 +8,7 @@ to generate QR codes.
 - Generate QR codes from URLs.
 - Download generated QR codes as image files.
 - User-friendly web interface.
-- 
+
 ## Technologies Used
 
 - Python 3.14.
