@@ -1,0 +1,22 @@
+body{
+    background-color: darkturquoise;
+    margin: 0;
+    height: 100%;
+    
+}
+.container
+{
+    text-align: center;
+    
+}
+.header , .footer
+{
+    font-size: large;
+    text-decoration: underline;
+    font-family: 'Times New Roman', Times, serif;
+}
+.footer
+{
+    margin-top: 40%;
+    position: sticky;    
+}
