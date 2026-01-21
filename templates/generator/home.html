@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block title %}Home - QR Code Generator{% endblock %}
+
+{% block content %}
+    <form method="POST" action="{% url 'generate_qr' %}" >
+        {% csrf_token %}
+        <label for="qr_data">
+        
+            Enter URL
+        </label>
+       <input type = "text" placeholder = "www.example.com" required id = "qr_data" name = "qr_data" >
+          
+        <button type="submit" >
+            Generate QR Code
+        </button>
+    </form>
+       
+{% endblock %}

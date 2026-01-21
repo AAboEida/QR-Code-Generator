@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block title %}Your QR Code - QR Code Generator{% endblock %}
+
+{% block content %}        
+    
+        <img src="{{ qr_code_url }}" alt="Generated QR Code" >
+            
+                
+                
+                <div> Your Data : {{ qr_data }}</div>
+           
+        
+            
+            <div>
+                <a href="{% url 'download_qr' %}?filename={{ filename }}" >
+                
+                    Download QR Code | 
+                </a>
+            
+                <a href="{% url 'home' %}" >
+                
+                    Create Another
+                </a>
+                </div>
+        
+        
+        
+{% endblock %}
+
+
+
+
+
+
+
+
+
