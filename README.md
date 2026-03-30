@@ -26,7 +26,21 @@ to generate QR codes.
 Use These Commands :
 ``` 
  pip install django
+ ```
+```
+
  pip install qrcode
+ ```
+
+```
  pip install pillow
 ```
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](screenshots/home.png)
+
+### 🔳 Generated QR Code
+![QR Result](screenshots/result.png)
  
