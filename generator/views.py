@@ -7,11 +7,13 @@ from datetime import datetime
 
 
 def home(request):
-    
+    '''View to render the home page with the QR code generation form.'''
     return render(request, 'generator/home.html')
 
 def generate_qr(request):
-        # Get the data from the form
+    '''View to handle QR code generation from form data.'''
+    
+    # Get the data from the form
     if request.method == 'POST':
         data = request.POST.get('qr_data', '')
         
@@ -23,14 +25,14 @@ def generate_qr(request):
                 border=4,
             ) 
 
-         # Add data to the QR code
+        # Add data to the QR code
         qr.add_data(data)
         qr.make(fit=True)
         # Create an image from the QR code
         img = qr.make_image(fill_color="black", back_color="white")
 
         # Save the image temporarily
-         # Create media directory if it doesn't exist
+        # Create media directory if it doesn't exist
         media_path = os.path.join(settings.MEDIA_ROOT, 'qrcodes')
         os.makedirs(media_path, exist_ok=True)
 
@@ -42,7 +44,7 @@ def generate_qr(request):
         # Save the image
         img.save(file_path)
 
-         # Create the URL for the image
+        # Create the URL for the image
         img_url = f'{settings.MEDIA_URL}qrcodes/{filename}'
         context = {"qr_code_url" : img_url,
                    "qr_data":data,
@@ -50,25 +52,24 @@ def generate_qr(request):
                    }
         
         return render(request, "generator/result.html",context)
-           
 
     # If not POST or no data, redirect to home
     return render(request, 'generator/home.html')
 
 
 def download_qr(request):
-   
-   # check if GET request
+    '''View to handle downloading the generated QR code image.'''
+    
+    # check if GET request
     if request.method == 'GET':
         file_name = request.GET.get('filename', '')
         file_path = os.path.join(settings.MEDIA_ROOT, 'qrcodes', file_name)
-   
-     # Open the file and return it as a download
+        
+        # Open the file and return it as a download
         if os.path.exists(file_path):
             response = FileResponse(open(file_path, 'rb'), content_type="image/png")
             response['Content-Disposition'] = f'attachment; filename="{file_name}"'
             return response
-                
 
     # If something went wrong, redirect to home
     return render(request, 'generator/home.html')
