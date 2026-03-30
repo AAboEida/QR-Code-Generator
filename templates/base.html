@@ -5,19 +5,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}QR Code Generator{% endblock %}</title>
-        <link rel = "stylesheet" href = {% static 'css/style.css'%}/>
+        <link rel = "stylesheet" href = "{% static 'css/style.css'%}"/>
     </head> 
     <body>
         <div class = "container">
             <header class = "header">
                 <h2>QR Code Generator</h2>
             </header>
-            <main class = "content">
+            <main class = "content ">
                 {%block content%}{% endblock%}
 
             </main>
             <footer class = "footer">
-                <p>QR Code Generator | Create by <a href = "https://github.com/AAboEida" target = "_blank">Ahmed</a></p>
+                <p>QR Code Generator | Created by <a href = "https://github.com/AAboEida" target = "_blank">AAboEida</a></p>
             </footer>
         </div>    
     </body>   

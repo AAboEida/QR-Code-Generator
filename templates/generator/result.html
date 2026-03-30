@@ -4,14 +4,10 @@
 
 {% block content %}        
     
-        <img src="{{ qr_code_url }}" alt="Generated QR Code" >
-            
-                
+        <img src="{{ qr_code_url }}" alt="Generated QR Code" >     
                 
                 <div> Your Data : {{ qr_data }}</div>
-           
-        
-            
+                
             <div>
                 <a href="{% url 'download_qr' %}?filename={{ filename }}" >
                 

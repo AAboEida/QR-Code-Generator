@@ -3,11 +3,12 @@
 {% block title %}Home - QR Code Generator{% endblock %}
 
 {% block content %}
-    <form method="POST" action="{% url 'generate_qr' %}" >
+<div >
+    <form method="POST" class = "qr-form" action="{% url 'generate_qr' %}" >
         {% csrf_token %}
         <label for="qr_data">
         
-            Enter URL
+            Enter URL/Text
         </label>
        <input type = "text" placeholder = "www.example.com" required id = "qr_data" name = "qr_data" >
           
@@ -15,5 +16,6 @@
             Generate QR Code
         </button>
     </form>
+</div>
        
 {% endblock %}
